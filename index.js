@@ -47,3 +47,31 @@ const doMath = (x, znak, y) => {
 }
 
 console.log(doMath(10, '+', 10));
+
+//third
+
+const createArray = (length) => [...new Array(length)];
+const requestValues = (index) => prompt(`Enter values for array #${index + 1} by ","  `);
+const fillArray = (array) => array.map((item, index) => requestSubarrayValues(index).split(',').filter((i) => i));
+
+const createUserArray = () => {
+    const arrayLength = +prompt('Enter length');
+    return fillArray(createArray(arrayLength));
+}
+
+console.log(createUserArray());
+
+//fourth
+
+const userLine = prompt('Pull here any text');
+    const userLetters = prompt('Enter letters what wanna remove');
+
+    const stringToArray = (string) => [...string];
+
+    const getCleanLine = (firstString, excludeString) => {
+        const lettersArray = stringToArray(firstString);
+        const excludeLettersArray = stringToArray(excludeString);
+        return lettersArray.filter((letter) => !excludeLettersArray.includes(letter)).join('');
+    }
+
+    console.log(getCleanLine(userLine, userLetters))
