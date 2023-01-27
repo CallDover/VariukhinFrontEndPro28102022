@@ -8,16 +8,16 @@ function SingleCharacterPalindrome(str) {
         return 'OK';
         }
     for (let i = 0; i < str.length; i++) {
-        let partial = str.substring(0, i) + str.substring(i + 1, str.length);
-        let reversed = reverse(partial);
-        if (partial === reversed) {
+        let almostPal = str.substring(0, i) + str.substring(i + 1, str.length);
+        let reversed = reverse(almostPal);
+        if (almostPal === reversed) {
             return 'Remove One';
         }
     }
     return 'Not Possible';
 }
 
-const usersPalindrome = prompt('Enter a palindrome or any string: ');
+const usersPalindrome = prompt('Enter a palindrome or any: ');
 const answer = SingleCharacterPalindrome(usersPalindrome);
 
 console.log(answer);
